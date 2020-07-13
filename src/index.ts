@@ -1,0 +1,16 @@
+import Server from './server/server';
+import router from './router/router';
+import MySQL from './mysql/mysql';
+
+const server = Server.init(3000);
+
+
+//using routes from router.ts
+server.app.use(router);
+//MySQL instance
+
+server.start(()=>{
+
+console.log('server running at port 3000');
+
+})
